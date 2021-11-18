@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV-Creation | Login</title>
+    <title>CV-Creation | Register</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -33,7 +33,7 @@
             <div class="signup-content">
                 <div class="signup-form">
                     <h2 class="form-title">Sign up</h2>
-                    <form method="POST" class="register-form" id="register-form">
+                    <form class="register-form" id="quickForm">
                         <div class="form-group">
                             <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                             <input type="text" name="name" id="name" placeholder="Your Name"/>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group">
                             <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="pass" id="pass" placeholder="Password"/>
+                            <input type="password" name="password" id="password" placeholder="Password"/>
                         </div>
                         <div class="form-group">
                             <label><i class="zmdi zmdi-lock-outline"></i></label>
@@ -76,11 +76,15 @@
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../plugins/jquery/jquery.min.js"></script>
+<script src="../plugins/jquery-validation/jquery.validate.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
+
+<script src="../public/js/register.js"></script>
 
 </body>
 

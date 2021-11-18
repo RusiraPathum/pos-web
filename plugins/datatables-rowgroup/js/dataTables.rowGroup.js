@@ -309,7 +309,7 @@ $.extend( RowGroup.prototype, {
 	},
 
 	/**
-	 * Take a rendered value from an end user and make it suitable for display
+	 * Take a rendered value from an end login and make it suitable for display
 	 * as a row, by wrapping it in a row, or detecting that it is a row.
 	 * @param {node|jQuery|string} display Display value
 	 * @param {string} className Class to add to the row
