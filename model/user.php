@@ -31,6 +31,19 @@ class user
 
     }
 
+    public function singleUser()
+    {
+
+        $query = " select * from user where email = ?";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $this->email);
+        $stmt->execute();
+
+        return $stmt;
+
+    }
+
     public function createUser()
     {
 
@@ -50,10 +63,9 @@ class user
         $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":password", $this->password);
 
-        $_SESSION['name'] = $this->name;
-
         // execute query
         if($stmt->execute()){
+            $_SESSION['name'] = $this->name;
             return true;
         }
         return false;
