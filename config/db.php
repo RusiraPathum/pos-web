@@ -3,10 +3,10 @@
 class db
 {
     private $host = "localhost";
-    private $db_name = "cv_creation";
+    private $db_name = "web-pos";
     //   private $username="root";
     private $username = "root";
-    private $password = "";
+    private $password = "rp19970520";
     //   private $password="mysql";
 
     private $connection;
