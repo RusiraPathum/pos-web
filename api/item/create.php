@@ -38,7 +38,7 @@ if(!empty($data->name) && !empty($data->email) && !empty($data->password)){
     if($user->createUser()){
 
         // set response code - 201 created
-        http_response_code(200);
+        http_response_code(201);
 
         // tell the user
         echo json_encode(array("message" => "User was created.", "status" => 200));
@@ -46,10 +46,10 @@ if(!empty($data->name) && !empty($data->email) && !empty($data->password)){
     } else{
 
         // set response code - 503 service unavailable
-        http_response_code(201);
+        http_response_code(503);
 
         // tell the user
-        echo json_encode(array("message" => "This Email is already taken.", "status" => 201));
+        echo json_encode(array("message" => "Unable to create product."));
     }
 
 }else{

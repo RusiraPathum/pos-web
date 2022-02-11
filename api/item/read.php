@@ -25,16 +25,30 @@ $user->password = $data->password;
 
 // read products will be here
 $result = $user->singleUser();
-//$rowCount = $result->rowCount();
+$rowCount = $result->rowCount();
 
-if (count($result) == 1){
+if ($rowCount > 0) {
+
+    $post_arr = array();
+
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+
+
+        extract($row);
+        $post_item = array(
+            'userId' => $row['userId'],
+            'email' => $row['email'],
+            'password' => $row['password']
+        );
+
+        array_push($post_arr, $post_item);
+
+    }
+
     http_response_code(200);
-    echo json_encode(array("data" => $result, "status" => 200));
-}else if(count($result) == 2) {
-    http_response_code(201);
-    echo json_encode(array("data" => "Email or Password incorrect", "status" => 201));
-}else{
-    http_response_code(202);
-    echo json_encode(array("message" => 'No user please register our system', "status" => 202));
-}
+    echo json_encode(array("data" => $post_arr, "status" => 200));
 
+} else {
+    http_response_code(404);
+    echo json_encode(['message' => 'No user found']);
+}
