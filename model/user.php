@@ -57,7 +57,7 @@ class user
                     'password' => $row['password']
                 );
 
-                if ($this->password == $row['password']) {
+                if (md5($this->password )== $row['password']) {
 
                     $_SESSION['name'] = $row['name'];
                     array_push($post_arr, $post_item);
@@ -82,7 +82,7 @@ class user
         // sanitize
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->password = htmlspecialchars(strip_tags($this->password));
+        $encyptPassword = md5($this->password = htmlspecialchars(strip_tags($this->password)));
 
         if ($this->checkEmail($this->email) == 1) {
             return false;
@@ -96,7 +96,7 @@ class user
             // bind values
             $stmt->bindParam(":name", $this->name);
             $stmt->bindParam(":email", $this->email);
-            $stmt->bindParam(":password", $this->password);
+            $stmt->bindParam(":password", $encyptPassword);
 
             // execute query
             if ($stmt->execute()) {
