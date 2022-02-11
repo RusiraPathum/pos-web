@@ -1,3 +1,11 @@
+$(document).ready(function() {
+
+    $("#alertSuccess").hide();
+    $("#alertError").hide();
+
+});
+
+
 $(function () {
     $.validator.setDefaults({
         submitHandler: function () {
@@ -85,7 +93,19 @@ function registerUser() {
         success: function (data) {
             console.log(data)
             if (data.status == 200) {
-                window.location.href = "dashboard.php";
+                $("#alertError").hide();
+                $("#alertSuccess").text("Registration Successfully!");
+                $("#alertSuccess").show();
+
+                setTimeout(function() {
+                    window.location.href = "dashboard.php";
+                }, 1000);
+            }else {
+                $("#alertSuccess").hide();
+                $("#alertError").text("This Email is already taken!");
+                $("#alertError").show();
+                $("#password").val(null);
+                $("#re_pass").val(null);
             }
         }, error: function (request, error) {
             console.log("Request: " + JSON.stringify(request));
