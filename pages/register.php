@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV-Creation | Register</title>
+    <title>Web-Pos | Register</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -65,7 +65,7 @@
                 </div>
                 <div class="signup-image">
                     <figure><img src="../vendor/img/logo.png" alt="sing up image"></figure>
-                    <a href="../index.html" class="signup-image-link">I am already member</a>
+                    <a href="../index.php" class="signup-image-link">I am already member</a>
                 </div>
             </div>
         </div>
