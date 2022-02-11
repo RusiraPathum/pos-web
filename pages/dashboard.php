@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $name = "";
 
 if (isset($_SESSION['name'])) {
@@ -10,7 +9,6 @@ if (isset($_SESSION['name'])) {
 } else {
     header('location: login.php');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +16,7 @@ if (isset($_SESSION['name'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>Web-Pos | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -31,8 +29,6 @@ if (isset($_SESSION['name'])) {
     <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
@@ -45,10 +41,10 @@ if (isset($_SESSION['name'])) {
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-    <!-- Preloader -->
-    <!--  <div class="preloader flex-column justify-content-center align-items-center">-->
-    <!--    <img class="animation__shake" src="../dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">-->
-    <!--  </div>-->
+        <!--Preloader -->
+      <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="../dist/img/logo.png" alt="AdminLTELogo" height="60" width="150">
+      </div>
 
     <!-- Navbar -->
     <?php
@@ -85,7 +81,7 @@ if (isset($_SESSION['name'])) {
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-12 col-sm-6">
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
@@ -100,7 +96,7 @@ if (isset($_SESSION['name'])) {
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-12 col-sm-6">
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
@@ -115,7 +111,7 @@ if (isset($_SESSION['name'])) {
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-12 col-sm-6">
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
@@ -130,7 +126,7 @@ if (isset($_SESSION['name'])) {
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-12 col-sm-6">
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
@@ -168,19 +164,12 @@ if (isset($_SESSION['name'])) {
 <script src="../plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
 <!-- Bootstrap 4 -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
 <script src="../plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
 <script src="../plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
@@ -194,9 +183,5 @@ if (isset($_SESSION['name'])) {
 <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../dist/js/pages/dashboard.js"></script>
 </body>
 </html>
