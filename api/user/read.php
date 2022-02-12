@@ -8,11 +8,11 @@ header("Acess-Control-Allow-Methods: POST");
 header("Acess-Control-Allow-Headers: Acess-Control-Allow-Headers,Content-Type,Acess-Control-Allow-Methods, Authorization");
 
 // include database and object files
-include_once '../../config/db.php';
+include_once '../../config/database.php';
 include_once '../../model/user.php';
 
 // instantiate database and product object
-$database = new db();
+$database = new database();
 $db = $database->getConnection();
 
 // initialize object

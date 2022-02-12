@@ -7,7 +7,7 @@ if (isset($_SESSION['name'])) {
 //    $id = $_SESSION['id'];
 
 } else {
-    header('location: login.php');
+    header("location: ../index.php");
 }
 ?>
 

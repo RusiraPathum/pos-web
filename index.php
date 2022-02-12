@@ -1,3 +1,11 @@
+<?php
+include_once "config/database.php";
+
+$db = new database();
+$db->getConnection();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

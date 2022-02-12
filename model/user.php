@@ -87,7 +87,7 @@ class user
         if ($this->checkEmail($this->email) == 1) {
             return false;
         } else {
-            //        // query to insert record
+            // query to insert record
             $query = "insert into user set name=:name, email=:email, password=:password";
 
             // prepare query
