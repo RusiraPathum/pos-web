@@ -21,10 +21,6 @@ class database
                     if ($this->connection->query($sql) == TRUE) {
 
                         $this->connection = new mysqli($this->servername, $this->username, $this->password, $this->dbName);
-//                        $this->connection = new PDO("mysql:host=" . $this->servername . ";dbname=" . $this->dbName, $this->username, $this->password);
-//                        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//                        $this->connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-//                        $this->connection->exec("set names UTF8");
                         $this->createAllTable($this->dbName, $this->connection);
 
                         return $this->connection;
