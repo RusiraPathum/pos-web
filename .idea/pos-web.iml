@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/login/fonts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/login/scss" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/login/js" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/login/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/login/images" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/login/css" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
