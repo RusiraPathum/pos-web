@@ -4,14 +4,13 @@ class database
 {
     private $servername = "localhost";
     private $username = "root";
-    private $password = "rp19970520";
+    private $password = "0713025880";
     private $dbName = "pos_db";
     private $connection;
 
     public function getConnection()
     {
         $this->connection = new mysqli($this->servername, $this->username, $this->password);
-
         try {
             try {
                 if ($this->connection->select_db($this->dbName) === false) {
@@ -22,7 +21,6 @@ class database
 
                         $this->connection = new mysqli($this->servername, $this->username, $this->password, $this->dbName);
                         $this->createAllTable($this->dbName, $this->connection);
-
                         return $this->connection;
                     }
 

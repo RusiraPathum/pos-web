@@ -1,9 +1,34 @@
 <?php
-include_once "config/database.php";
+include_once "./config/database.php";
+require_once 'google_api/vendor/autoload.php';
 
 $db = new database();
 $db->getConnection();
 
+$clientID = '511918634590-43c86ldbmnqa5jkc8ub28me19pvbdvrn.apps.googleusercontent.com';
+$ClientSecret = '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';
+$redirectUrl = 'http://localhost:63342/pos-web/index.php';
+
+//Creating client request to google
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($ClientSecret);
+$client->setRedirectUri($redirectUrl);
+$client->addScope('profile');
+$client->addScope('email');
+
+if (isset($_GET['code'])) {
+    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+    $client->setAccessToken($token);
+
+    //Getting User Profile
+    $gauth = new Google_Service_Oauth2($client);
+    $google_info = $gauth->userinfo->get();
+    $email = $google_info->email;
+    $name = $google_info->name;
+
+    echo "email :" .$email." name: ".$name;
+}
 ?>
 
 <!DOCTYPE html>
@@ -73,9 +98,13 @@ $db->getConnection();
                     <div class="social-login">
                         <span class="social-label">Or login with</span>
                         <ul class="socials">
-                            <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                            <li>
+                                <?php
+                                    echo '<a href="'.$client->createAuthUrl().'"><i class="display-flex-center zmdi zmdi-google"></i></a>';
+                                ?>
+                            </li>
                             <!--                            <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>-->
-                            <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                         </ul>
                     </div>
                 </div>
