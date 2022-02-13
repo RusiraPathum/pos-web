@@ -30,7 +30,7 @@ $(function () {
                 minlength: 5,
                 equalTo: "#password"
             },
-            terms: {
+            term: {
                 required: true
             },
         },
@@ -51,7 +51,7 @@ $(function () {
                 minlength: "Your password must be at least 5 characters long",
                 equalTo: "Password are not matching"
             },
-            terms: "Please accept our terms"
+            term: "Please accept our terms"
         },
         errorElement: 'span',
         errorPlacement: function (error, element) {
