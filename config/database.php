@@ -10,6 +10,7 @@ class database
 
     public function getConnection()
     {
+
         $this->connection = new mysqli($this->servername, $this->username, $this->password);
 
         try {
@@ -21,10 +22,7 @@ class database
                     if ($this->connection->query($sql) == TRUE) {
 
                         $this->connection = new mysqli($this->servername, $this->username, $this->password, $this->dbName);
-//                        $this->connection = new PDO("mysql:host=" . $this->servername . ";dbname=" . $this->dbName, $this->username, $this->password);
-//                        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//                        $this->connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-//                        $this->connection->exec("set names UTF8");
+
                         $this->createAllTable($this->dbName, $this->connection);
 
                         return $this->connection;
@@ -63,6 +61,8 @@ class database
 
             $connection->select_db($dbName);
             $retval = $connection->multi_query($sql);
+
+//            echo $retval;
 
             if (!$retval) {
                 die('Could not create table: ' . $connection->error());

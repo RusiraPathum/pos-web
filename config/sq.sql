@@ -1,12 +1,14 @@
 DROP TABLE IF EXISTS user;
 
 CREATE TABLE `user` (
-    `userId` int NOT NULL AUTO_INCREMENT,
+    `userId` int AUTO_INCREMENT,
     `name` varchar(450) DEFAULT NULL,
     `email` varchar(450) DEFAULT NULL,
     `password` varchar(450) DEFAULT NULL,
     PRIMARY KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
+
+AlTER
 
 -- DROP TABLE IF EXISTS `all_details`;
 
