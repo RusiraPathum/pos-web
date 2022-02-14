@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "./config/database.php";
 require_once 'google_api/vendor/autoload.php';
 
@@ -26,9 +27,16 @@ if (isset($_GET['code'])) {
     $google_info = $gauth->userinfo->get();
     $email = $google_info->email;
     $name = $google_info->name;
+    $id = $google_info->id;
+    $_SESSION['name'] = $name;
+    $_SESSION['id'] = $id;
 
-    echo "email :" .$email." name: ".$name;
+    if(isset($_SESSION['id'])){
+        header("location: pages/dashboard/home.php");
+    }
+
 }
+
 ?>
 
 <!DOCTYPE html>
