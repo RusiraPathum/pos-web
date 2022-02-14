@@ -43,13 +43,14 @@ if(!empty($data->name) && !empty($data->email) && !empty($data->password)){
         // tell the user
         echo json_encode(array("message" => "User was created.", "status" => 200));
 
-    } else{
+    } else {
 
         // set response code - 503 service unavailable
-        http_response_code(201);
+        http_response_code(202);
 
         // tell the user
         echo json_encode(array("message" => "This Email is already taken.", "status" => 201));
+
     }
 
 }else{
