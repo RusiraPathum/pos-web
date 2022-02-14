@@ -1,5 +1,8 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 session_start();
 
 class user
@@ -11,12 +14,19 @@ class user
     public $name;
     public $email;
     public $password;
-//    public $created;
-//    public $conform_password;
+
+    //mail details
+    public $globelEmail = "rpsandeepa@gmail.com";
+    public $globelPassword = "rp19970520";
 
     public function __construct($db)
     {
         $this->conn = $db;
+
+        require 'PHPMailer/Exception.php';
+        require 'PHPMailer/PHPMailer.php';
+        require 'PHPMailer/SMTP.php';
+
     }
 
     public function readUser()
@@ -90,38 +100,9 @@ class user
 
             $token = md5($this->email).rand(10,9999);
 
-//
-//            $mail = new PHPMailer();
-//
-//            $mail->CharSet =  "utf-8";
-//            $mail->IsSMTP();
-//            // enable SMTP authentication
-//            $mail->SMTPAuth = true;
-//            // GMAIL username
-//            $mail->Username = "rusira.pathum20@gmail.com";
-//            // GMAIL password
-//            $mail->Password = "your_gmail_password";
-//            $mail->SMTPSecure = "ssl";
-//            // sets GMAIL as the SMTP server
-//            $mail->Host = "smtp.gmail.com";
-//            // set the SMTP port for the GMAIL server
-//            $mail->Port = "465";
-//            $mail->From='rusira.pathum20@gmail.com';
-//            $mail->FromName='your_name';
-//            $mail->AddAddress('reciever_email_id', 'reciever_name');
-//            $mail->Subject  =  'Reset Password';
-//            $mail->IsHTML(true);
-//            $mail->Body    = 'Click On This Link to Verify Email';
-//            if($mail->Send())
-//            {
-//                echo "Check Your Email box and Click on the email verification link.";
-//            }
-//            else
-//            {
-//                echo "Mail Error - >".$mail->ErrorInfo;
-//            }
-
-            // query to insert record
+            $link = "<a href='http://localhost:63342/pos-web/pages/auth/verify-email.php?key=".$this->email."&token=".$token."'>Click and Verify Email</a>";
+            $this->sendMailer($this->email, $link);
+            //query to insert record
             $query = "insert into user set name=:name, email=:email, email_verification_link=:email_verification_link, password=:password";
 
             // prepare query
@@ -132,14 +113,60 @@ class user
             $stmt->bindParam(":email", $this->email);
             $stmt->bindParam(":email_verification_link", $token);
             $stmt->bindParam(":password", $encyptPassword);
+            $stmt->execute();
 
             // execute query
-            if ($stmt->execute()) {
-                $_SESSION['name'] = $this->name;
-                return true;
-            }
+//            if ($stmt->execute()) {
+//                $_SESSION['name'] = $this->name;
+//                return 1;
+//            }
+
+            //send mail verification email
+
+
+            return true;
+
         }
 
+    }
+
+    public function sendMailer($recipientsEmail, $link){
+
+        $mail = new PHPMailer(true);
+
+        try {
+
+            //Server settings
+            $mail->SMTPDebug = 0;
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $this->globelEmail;
+            $mail->Password   = $this->globelPassword;
+            $mail->SMTPSecure = 'tls';
+            $mail->Port       = 587;
+
+            //Recipients
+            $mail->setFrom($this->globelEmail, 'Verification Email');
+            $mail->addAddress($recipientsEmail, 'Pos-Web');
+            $mail->addReplyTo($this->globelEmail, 'Information');
+
+
+            //Attachments
+            //$mail->addAttachment('/var/tmp/file.tar.gz');
+            //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');
+
+            //Content
+            $mail->isHTML(true);
+            $mail->Subject = 'Web-Pos Account Verification Email';
+            $mail->Body    = 'Click On This Link to Verify Email '.$link.'';
+            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+            $mail->send();
+
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
 
     }
 

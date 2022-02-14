@@ -83,9 +83,10 @@ function registerUser() {
     }
 
     data = JSON.stringify(data)
+    console.log(data)
 
     $.ajax({
-        url: '../api/user/create.php',
+        url: '../../api/user/create.php',
         method: 'POST',
         processData: false,
         contentType: false,
