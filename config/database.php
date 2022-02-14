@@ -4,7 +4,7 @@ class database
 {
     private $servername = "localhost";
     private $username = "root";
-    private $password = "rp19970520";
+    private $password = "0713025880";
     private $dbName = "pos_db";
     private $connection;
 
