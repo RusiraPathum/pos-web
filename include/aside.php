@@ -41,8 +41,8 @@ echo '</a>
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">       
           <li class="nav-item">
-            <a href="home.php" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="../dashboard/home.php" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
               
@@ -50,14 +50,33 @@ echo '</a>
             </a>
           </li> 
           <li class="nav-item">
-            <a href="dashboard.php" class="nav-link">
+            <a href="../dashboard/dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
               
               </p>
             </a>
-          </li>                   
+          </li> 
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Staff
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">        
+              <li class="nav-item">
+                <a href="../staff/addEmployee.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Employee</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+                            
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
