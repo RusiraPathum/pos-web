@@ -98,7 +98,7 @@ function registerUser() {
                 $("#alertSuccess").show();
 
                 setTimeout(function() {
-                    window.location.href = "dashboard.php";
+                    window.location.href = "../dashboard/home.php";
                 }, 1000);
             }else {
                 $("#alertSuccess").hide();

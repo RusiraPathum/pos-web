@@ -87,8 +87,42 @@ class user
         if ($this->checkEmail($this->email) == 1) {
             return false;
         } else {
+
+            $token = md5($this->email).rand(10,9999);
+
+//
+//            $mail = new PHPMailer();
+//
+//            $mail->CharSet =  "utf-8";
+//            $mail->IsSMTP();
+//            // enable SMTP authentication
+//            $mail->SMTPAuth = true;
+//            // GMAIL username
+//            $mail->Username = "rusira.pathum20@gmail.com";
+//            // GMAIL password
+//            $mail->Password = "your_gmail_password";
+//            $mail->SMTPSecure = "ssl";
+//            // sets GMAIL as the SMTP server
+//            $mail->Host = "smtp.gmail.com";
+//            // set the SMTP port for the GMAIL server
+//            $mail->Port = "465";
+//            $mail->From='rusira.pathum20@gmail.com';
+//            $mail->FromName='your_name';
+//            $mail->AddAddress('reciever_email_id', 'reciever_name');
+//            $mail->Subject  =  'Reset Password';
+//            $mail->IsHTML(true);
+//            $mail->Body    = 'Click On This Link to Verify Email';
+//            if($mail->Send())
+//            {
+//                echo "Check Your Email box and Click on the email verification link.";
+//            }
+//            else
+//            {
+//                echo "Mail Error - >".$mail->ErrorInfo;
+//            }
+
             // query to insert record
-            $query = "insert into user set name=:name, email=:email, password=:password";
+            $query = "insert into user set name=:name, email=:email, email_verification_link=:email_verification_link, password=:password";
 
             // prepare query
             $stmt = $this->conn->prepare($query);
@@ -96,6 +130,7 @@ class user
             // bind values
             $stmt->bindParam(":name", $this->name);
             $stmt->bindParam(":email", $this->email);
+            $stmt->bindParam(":email_verification_link", $token);
             $stmt->bindParam(":password", $encyptPassword);
 
             // execute query

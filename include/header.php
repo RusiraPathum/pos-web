@@ -21,7 +21,18 @@ echo '<nav class="main-header navbar navbar-expand navbar-white">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
-      </li>     
+      </li> 
+      
+      <li class="nav-item dropdown">
+          <a class="nav-link btn dropdown-toggle" role="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user fa-fw"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <a class="dropdown-item" type="button">Action</a>
+            <a class="dropdown-item" type="button">Another action</a>
+            <a class="dropdown-item" href="../auth/logout.php" type="button">Logout</a>
+          </ul>
+        </li> 
     </ul>
   </nav>';
 

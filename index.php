@@ -66,7 +66,7 @@ if (isset($_GET['code'])) {
             <div class="signin-content">
                 <div class="signin-image">
                     <figure><img src="vendor/img/logo.png" alt="sing up image"></figure>
-                    <a href="pages/register.php" class="signup-image-link">Create an account</a>
+                    <a href="pages/auth/register.php" class="signup-image-link">Create an account</a>
                 </div>
 
                 <div class="signin-form">
