@@ -7,7 +7,7 @@ if (isset($_SESSION['name'])) {
 //    $id = $_SESSION['id'];
 
 } else {
-    header('location: ../index.php');
+    header('location: ../../index.php');
 }
 
 
@@ -17,7 +17,7 @@ echo '<aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Sidebar login panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">';
 echo '<a href="#" class="d-block">';echo $name;
@@ -41,7 +41,16 @@ echo '</a>
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">       
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="home.php" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Home
+              
+              </p>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard

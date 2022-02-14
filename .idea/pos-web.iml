@@ -8,6 +8,19 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/login/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/login/images" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/login/css" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/firebase/php-jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/google/auth" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/google/apiclient-services" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/phpseclib/phpseclib" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/google_api/vendor/psr/cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

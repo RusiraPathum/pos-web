@@ -77,7 +77,7 @@ function loginUser() {
                 $("#alertSuccess").show();
 
                 setTimeout(function() {
-                    window.location.href = "pages/dashboard.php";
+                    window.location.href = "pages/dashboard/home.php";
                 }, 1000);
 
             }else if (data.status == 201) {
@@ -89,14 +89,14 @@ function loginUser() {
 
             }else {
                 $("#alertSuccess").hide();
-                $("#alertWarning").hide();
+                $("#alertError").hide();
                 $("#alertWarning").text("Please Register Our System !");
                 $("#alertWarning").show();
                 $("#email").val(null);
                 $("#password").val(null);
 
                 setTimeout(function() {
-                    window.location.href = "pages/register.php";
+                    window.location.href = "pages/auth/register.php";
                 }, 2000);
             }
         }, error: function (request, error) {

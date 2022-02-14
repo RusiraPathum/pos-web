@@ -11,15 +11,15 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="../vendor/login/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../../vendor/login/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="../vendor/login/css/style.css">
+    <link rel="stylesheet" href="../../vendor/login/css/style.css">
 
 </head>
 
@@ -69,8 +69,8 @@
                     </form>
                 </div>
                 <div class="signup-image">
-                    <figure><img src="../vendor/img/logo.png" alt="sing up image"></figure>
-                    <a href="../index.php" class="signup-image-link">I am already member</a>
+                    <figure><img src="../../vendor/img/logo.png" alt="sing up image"></figure>
+                    <a href="../../index.php" class="signup-image-link">I am already member</a>
                 </div>
             </div>
         </div>
@@ -79,21 +79,21 @@
 </div>
 
 <!-- JS -->
-<script src="../vendor/login/vendor/jquery/jquery.min.js"></script>
-<script src="../vendor/login/js/main.js"></script>
+<script src="../../vendor/login/vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/login/js/main.js"></script>
 
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="../plugins/jquery/jquery.min.js"></script>
-<script src="../plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../dist/js/adminlte.min.js"></script>
+<script src="../../dist/js/adminlte.min.js"></script>
 
-<script src="../public/js/register.js"></script>
+<script src="../../public/js/register.js"></script>
 
 </body>
 

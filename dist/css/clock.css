@@ -1,0 +1,82 @@
+
+#clock {
+
+    align-content: center;
+    justify-content: left;
+    display: flex;
+    /*min-height: 100 hv;*/
+}
+
+#clock h2 {
+    position: relative;
+    display: block;
+    color: white;
+    text-align: center;
+    margin: 10px, 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: 0.8em;
+}
+
+#big h2 {
+    position: relative;
+    display: block;
+    color: white;
+    text-align: left;
+    margin: 10px, 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: 1.4em;
+    padding-left: 1%
+}
+
+
+#clock #time {
+    display: flex;
+}
+
+#clock #time div {
+    position: relative;
+    margin: 0 5px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+}
+
+#clock #time div span {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 80px;
+    background: #813d83;
+    justify-content: center;
+    align-content: center;
+    font-size: 3em;
+    text-align: center;
+    z-index: 10;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .2)
+}
+
+#clock #time div span:nth-child(2) {
+    height: 30px;
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    z-index: 9;
+    box-shadow: none;
+    background: #4e0c50;
+    color: white;
+    text-transform: uppercase;
+}
+
+#clock #time div:last-child span {
+    background: #f80e8d;
+}
+
+#clock #time div:last-child span:nth-child(2) {
+    background: #8a1253;
+}
+
+.num {
+    color: white;
+}
